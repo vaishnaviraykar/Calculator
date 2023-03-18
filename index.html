@@ -5,40 +5,56 @@
          <link rel="stylesheet" type="text/css" href="stylesheet.css">
           
     </head>
+    <script>
+        function handleClick(val)
+        {
+          const inputBox = document.getElementById("calculator-screen");
+          inputBox.value = (inputBox.value + val);
+        }
+      
+        function clearScreen()
+        {
+          const inputBox = document.getElementById("calculator-screen");
+          inputBox.value = "";
+        }
+      
+        function calculate()
+        {
+          const inputBox = document.getElementById("calculator-screen");
+          const ans = eval(inputBox.value);
+          inputBox.value = ans;
+        }
+      </script>
+      
     <body>
-        <div class="calculator-container">
+        <div class="calculator-container" >
             <p class="calculator-brand-name">RTC</p>
-            <input type="number" class="calculator-screen"/>
+            <input type="text" class="calculator-screen" id="calculator-screen"/>
             <div class="buttons-container">
-                <button class="calculator-button calculator-button:hover">AC</button>
-                <button class="calculator-button calculator-button:hover">C</button>
-                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2"> %</button>
-                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2">/</button>
+                <button class="calculator-button calculator-button:hover" onclick="handleClick(7)">7</button>
+                <button class="calculator-button calculator-button:hover" onclick="handleClick(8)">8</button>
+                <button class="calculator-button  calculator-button:hover" onclick="handleClick(9)">9</button>
+                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2" onclick="clearScreen()">CE</button>
             </div>
             <div class="buttons-container">
-                <button class="calculator-button  calculator-button:hover">7</button>
-                <button class="calculator-button  calculator-button:hover">8</button>
-                <button class="calculator-button calculator-button:hover">9</button>
-                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2">+</button>
+                <button class="calculator-button  calculator-button:hover" onclick="handleClick(4)">4</button>
+                <button class="calculator-button  calculator-button:hover" onclick="handleClick(5)">5</button>
+                <button class="calculator-button calculator-button:hover" onclick="handleClick(6)">6</button>
+                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2" onClick="handleClick('-')">-</button>
             </div>
             <div class="buttons-container">
-                <button class="calculator-button  calculator-button:hover">4</button>
-                <button class="calculator-button  calculator-button:hover">5</button>
-                <button class="calculator-button  calculator-button:hover">6</button>
-                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2">-</button>
+                <button class="calculator-button  calculator-button:hover" onclick="handleClick(1)">1</button>
+                <button class="calculator-button  calculator-button:hover" onclick="handleClick(2)">2</button>
+                <button class="calculator-button  calculator-button:hover" onclick="handleClick(3)">3</button>
+                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2"onClick="handleClick('*')">*</button>
             </div>
             <div class="buttons-container">
-                <button class="calculator-button  calculator-button:hover">1</button>
-                <button class="calculator-button  calculator-button:hover">2</button>
-                <button class="calculator-button  calculator-button:hover">3</button>
-                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2">*</button>
+                <button class="calculator-button  calculator-button:hover" onClick="handleClick(0)">0</button>
+                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2" onClick="handleClick('/')">/</button>
+                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2"onClick="handleClick('+')">+</button>
+                <button class="calculator-button  calculator-button:hover bg-blue calculator-button-2"onclick="calculate()">=</button>
             </div> 
-            <div class="buttons-container">
-                <button class="calculator-button  calculator-button:hover">0</button>
-                <button class="calculator-button  calculator-button:hover">00</button>
-                <button class="calculator-button  calculator-button:hover">.</button>
-                <button class="calculator-button  calculator-button:hover bg-blue calculator calculator-button-2">=</button>
-            </div>
+            
         </div>
     </body>
 </html>
